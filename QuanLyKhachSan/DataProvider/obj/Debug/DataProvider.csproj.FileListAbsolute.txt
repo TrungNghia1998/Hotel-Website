@@ -1,0 +1,12 @@
+C:\Users\COMPUTER\Desktop\DoAn2\QuanLyKhachSan\DataProvider\bin\Debug\DataProvider.dll.config
+C:\Users\COMPUTER\Desktop\DoAn2\QuanLyKhachSan\DataProvider\bin\Debug\DataProvider.dll
+C:\Users\COMPUTER\Desktop\DoAn2\QuanLyKhachSan\DataProvider\bin\Debug\DataProvider.pdb
+C:\Users\COMPUTER\Desktop\DoAn2\QuanLyKhachSan\DataProvider\bin\Debug\EntityFramework.dll
+C:\Users\COMPUTER\Desktop\DoAn2\QuanLyKhachSan\DataProvider\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\COMPUTER\Desktop\DoAn2\QuanLyKhachSan\DataProvider\bin\Debug\EntityFramework.xml
+C:\Users\COMPUTER\Desktop\DoAn2\QuanLyKhachSan\DataProvider\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\COMPUTER\Desktop\DoAn2\QuanLyKhachSan\DataProvider\obj\Debug\DataProvider.csprojAssemblyReference.cache
+C:\Users\COMPUTER\Desktop\DoAn2\QuanLyKhachSan\DataProvider\obj\Debug\DataProvider.csproj.CoreCompileInputs.cache
+C:\Users\COMPUTER\Desktop\DoAn2\QuanLyKhachSan\DataProvider\obj\Debug\DataProvider.csproj.CopyComplete
+C:\Users\COMPUTER\Desktop\DoAn2\QuanLyKhachSan\DataProvider\obj\Debug\DataProvider.dll
+C:\Users\COMPUTER\Desktop\DoAn2\QuanLyKhachSan\DataProvider\obj\Debug\DataProvider.pdb

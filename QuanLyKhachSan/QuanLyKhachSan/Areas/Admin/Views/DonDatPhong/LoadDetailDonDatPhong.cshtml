@@ -1,0 +1,66 @@
+﻿@model QuanLyKhachSan.Areas.Admin.Models.ThongTinChiTietDonDatPhong
+
+@{
+    ViewBag.Title = "Thông tin đơn đặt phòng";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@section scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+    <script src="~/Scripts/controllers/detailDonDatPhong.js"></script>
+}
+
+<div class="row">
+    <h1 style="margin-left: 30px; color:dimgray">Quản lý đơn đặt phòng</h1>
+</div>
+<div class="row" style="margin-left:5px">
+    <div class="container">
+        <hr />
+        <div class="modal-body row">
+            <div class="col-md-3">
+                <!-- Your first column here -->
+                <p>Thông tin đặt phòng</p>
+            </div>
+            <div class="col-md-6">
+                <!-- Your second column here -->
+                <p id="ngayDat">Ngày đặt phòng: <b>@Model.NgayDat</b></p>
+                <p id="ngayDen">Ngày đến: <b>@Model.NgayDen</b> </p>
+                <p id="ngayDi">Ngày đi: <b>@Model.NgayDi</b></p>
+            </div>
+        </div>
+        <hr />
+        <div class="modal-body row">
+            <div class="col-md-3">
+                <!-- Your first column here -->
+                <p>Phòng được đặt</p>
+            </div>
+            <div class="col-md-6">
+                <!-- Your second column here -->
+                <p id="tenPhong">Phòng: <b>@Model.TenPhong</b></p>
+                <p id="loaiPhong">Loại phòng: <b>@Model.LoaiPhong</b></p>
+                <p id="giaTien">Đơn giá (VNĐ): <b>@Model.GiaPhong</b></p>
+            </div>
+        </div>
+        <hr />
+        <div class="modal-body row">
+            <div class="col-md-3">
+                <!-- Your first column here -->
+                <p>Thông tin khách hàng</p>
+            </div>
+            <div class="col-md-6">
+                <!-- Your second column here -->
+                <p id="tenKhachHang">Tên khách hàng: <b>@Model.TenKhachHang</b></p>
+                <p id="ngaySinh">Ngày sinh: <b>@Model.NgaySinhNotTime</b></p>
+                <p id="gioiTinh">Giới tính: <b>@Model.GioiTinh</b></p>
+                <p id="diaChi">Địa chỉ: <b>@Model.DiaChi</b></p>
+                <p id="soDienThoai">Số điện thoại: <b>@Model.SoDienThoai</b></p>
+                <p id="email">Email: <b>@Model.Email</b></p>
+                <p id="cmnd">Số CMND: <b>@Model.CMND</b></p>
+            </div>
+        </div>
+
+        <button type="button" id="btnBack" class="btn btn-default" style="margin-bottom:10px; margin-left: 10px; float:right"> Quay lại</button>
+        @*<button type="button" idPhieuDatPhong="@Model.MaPhieuDatPhong" idPhong="@Model.MaPhong" class="btn btn-primary" id="btnAccept" style="margin-bottom:10px; margin-left:30px; float:right"> Xác nhận đơn đặt phòng</button>*@
+    </div>
+</div>
+

@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "Danh sách đơn đặt phòng";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@section scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+    <script src="/Scripts/plugins/mustache.min.js"></script>
+    <script src="~/Scripts/plugins/jquery.twbsPagination.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="/Scripts/controllers/donDatPhongController.js"></script>
+}
+    <div class="row">
+        <h1 style="margin-bottom: 30px; margin-left: 30px">Quản lý đơn đặt phòng</h1>
+    </div>
+
+
+<div class="row" style="margin-left: 5px">
+    <div class="container">
+        <div class="row">           
+            <input type="text" class="form-control" id="txtNameSearch" style="margin-bottom:10px; width: 400px; margin-left:90px" placeholder="Nhập tên khách..." />
+            <button type="button" id="btnSearch" class="btn btn-success" style="margin-bottom:10px; width:100px; margin-left:25px">Tìm kiếm</button>
+            <button type="button" id="btnReset" class="btn btn-warning" style="margin-bottom:10px; margin-left:10px">Mặc định</button>
+        </div>
+
+        <table class="table table-striped table-hover table-bordered" cellspacing="0">
+            <thead class="thead-light">
+                <tr>
+                    <th style="text-align:center">
+                        Khách hàng
+                    </th>
+                    <th style="text-align:center">
+                        Ngày đến    
+                    </th>
+                    <th style="text-align:center">
+                        Ngày đi
+                    </th>
+                    <th style="text-align:center">
+                        Ngày đặt
+                    </th>
+                    <th style="text-align:center">
+                        Trạng thái
+                    </th>
+                    <th style="text-align:center; width:180px">
+                        Chức năng
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="tblDataDonDatPhong"></tbody>
+        </table>
+        <div id="pagination" class="pagination" style="float:right">
+
+        </div>
+    </div>
+</div>
+
+
+
+<script id="dondatphong-template" type="x-tmpl-mustache">
+    <tr>
+        <td style="text-align:center">{{KhachHang}}</td>
+        <td style="text-align:center">{{NgayDen}}</td>
+        <td style="text-align:center">{{NgayDi}}</td>
+        <td style="text-align:center">{{{NgayDat}}}</td>
+        <td style="text-align:center">{{{TrangThai}}}</td>
+        <td style="text-align:center">
+            <button class="btn btn-primary btnDetail" data-id="{{ID}}">Xem</button>
+            @*<button class="btn btn-danger btnDelete" data-id="{{ID}}">Xóa</button>*@
+        </td>
+    </tr>
+</script>
+
+

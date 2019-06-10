@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "Danh sách các phòng";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@section scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+    <script src="/Scripts/plugins/mustache.min.js"></script>
+    <script src="~/Scripts/plugins/jquery.twbsPagination.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="/Scripts/controllers/phongController.js"></script>
+}
+
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">
+        <a href="@Url.Action("Index","Home")">Admin</a>
+    </li>
+    <li class="breadcrumb-item active">Danh sách các phòng</li>
+</ol>
+
+
+<div class="row">
+    <div class="container">
+        <div class="row">
+            <button type="button" id="btnAddNewRoom" class="btn btn-primary" style="margin-bottom:10px; margin-left:15px"> Thêm phòng </button>
+            <div class="form-inline" style="margin-left:324px">
+                
+                <input type="text" class="form-control" id="txtNameSearch" style="margin-bottom:10px; width: 400px;" placeholder="Nhập số phòng..." />
+            </div>
+            
+           
+            <button type="button" id="btnSearch" class="btn btn-success" style="margin-bottom:10px; width:100px; margin-left:25px">Tìm kiếm</button>
+            <button type="button" id="btnReset" class="btn btn-warning" style="margin-bottom:10px; margin-left:10px">Mặc định</button>
+        </div>
+
+        <table class="table table-bordered" cellspacing="0">
+            <thead class="thead-dark">
+                <tr>
+                    <th style="text-align:center">
+                        Ảnh
+                    </th>
+                    <th style="text-align:center">
+                        Số Phòng
+                    </th>
+                    <th style="text-align:center; width: 180px">
+                        Loại phòng
+                    </th>
+                    <th style="text-align:center; width: 130px">
+                        Tầng
+                    </th>                  
+                    <th style="text-align:center; width:180px">
+                        Thao tác
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="tblDataRoom"></tbody>
+        </table>
+        <div id="pagination" class="pagination" style="float:right">
+
+        </div>
+    </div>
+</div>
+
+
+
+<script id="room-template" type="x-tmpl-mustache">
+    <tr>
+        <td style="text-align:center; width:200px"><img src="{{Image}}" style="width: 180px" /></td>
+        <td style="text-align:center; width: 120px">{{Name}}</td>
+        <td style="text-align:center">{{Type}}</td>
+        <td style="text-align:center">{{Level}}</td>
+        <td style="text-align:center">
+            <button class="btn btn-primary btnEdit" data-id="{{ID}}">Edit</button>
+            <button class="btn btn-danger btnDelete" data-id="{{ID}}">Delete</button>
+        </td>
+    </tr>
+</script>
+
+@RenderPage("_AddUpdateRoomModal.cshtml")

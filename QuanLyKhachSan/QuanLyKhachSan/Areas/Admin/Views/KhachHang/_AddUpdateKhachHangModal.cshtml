@@ -1,0 +1,52 @@
+﻿<!-- Modal Service Boostrap -->
+<div class="modal fade" id="modalAddUpdate" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header btn-primary">
+                <h4 class="modal-title">Khách Hàng</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form role="form" id="frmSaveData">
+                    <div class="form-group">
+                        <label for="txtHoTen">Họ tên: </label>
+                        <input type="text" class="form-control" name="txtHoTen" id="txtHoTen">
+                        <input type="hidden" id="hiddenID" value="0" />
+                    </div>
+                    <div class="form-group">
+                        <label for="txtDiaChi">Địa chỉ: </label>
+                        <input type="text" class="form-control" name="txtDiaChi" id="txtDiaChi">                     
+                    </div>
+                    <div class="form-group">
+                        <label for="txtSoDienThoai">Số điện thoại:</label>
+                        <input type="tel" class="form-control" name="txtSoDienThoai" id="txtSoDienThoai">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtSoCMND">Số CMND:</label>
+                        <input type="number" class="form-control" name="txtSoCMND" id="txtSoCMND">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtEmail">Email:</label>
+                        <input type="email" class="form-control" name="txtEmail" id="txtEmail">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtTenTaiKhoan">Tên tài khoản:</label>
+                        <input type="text" class="form-control" name="txtTenTaiKhoan" id="txtTenTaiKhoan">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtMatKhau">Mật khẩu:</label>
+                        <input type="password" class="form-control" name="txtMatKhau" id="txtMatKhau">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" id="btnSave">Lưu lại</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

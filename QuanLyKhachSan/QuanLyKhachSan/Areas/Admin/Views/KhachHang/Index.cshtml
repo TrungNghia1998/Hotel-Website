@@ -1,0 +1,87 @@
+﻿
+@{
+    ViewBag.Title = "Danh sách khách hàng";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@section scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+    <script src="/Scripts/plugins/mustache.min.js"></script>
+    <script src="~/Scripts/plugins/jquery.twbsPagination.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="/Scripts/controllers/khachHangController.js"></script>
+}
+
+<div class="row">
+    <div class="container">
+        <div class="row">
+            <button type="button" id="btnAddNew" class="btn btn-primary" style="margin-bottom:10px; margin-left:30px"> Thêm khách hàng </button>
+            @*<div style="margin-bottom:10px; margin-left:30px; color: white" class="btn btn-primary"><a href="/Admin/KhachHang/Add" style="color:white">Thêm khách hàng</a></div>*@
+            <input type="text" class="form-control" id="txtNameSearch" style="margin-bottom:10px; width: 400px; margin-left:90px" placeholder="Nhập từ khóa..." />
+            <button type="button" id="btnSearch" class="btn btn-success" style="margin-bottom:10px; width:100px; margin-left:25px">Tìm kiếm</button>
+            <button type="button" id="btnReset" class="btn btn-warning" style="margin-bottom:10px; margin-left:10px">Mặc định</button>
+        </div>
+
+        <table class="table table-striped table-hover table-bordered" cellspacing="0">
+            <thead class="thead-light">
+                <tr>
+                    <th style="text-align:center">
+                        Mã khách hàng
+                    </th>
+                    <th style="text-align:center">
+                        Tên đăng nhập
+                    </th>
+                    <th style="text-align:center; width: 180px">
+                        Họ tên
+                    </th>
+                    <th style="text-align:center; width: 130px; display: none">
+                        Địa chỉ
+                    </th>
+                    <th style="text-align:center">
+                        Email
+                    </th>
+                    <th style="text-align:center; width:56px">
+                        Số điện thoại
+                    </th>
+                    <th style="text-align:center; width:56px; display: none">
+                        Số CMND
+                    </th>
+                    <th style="text-align:center; width:180px">
+                        Thao tác
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="tblDataCustomer"></tbody>
+        </table>
+        <div id="pagination" class="pagination" style="float:right">
+
+        </div>
+    </div>
+</div>
+
+
+
+<script id="customer-template" type="x-tmpl-mustache">
+    <tr>
+        <td style="text-align:center">{{ID}}</td>
+        <td style="text-align:center">{{Username}}</td>
+        <td style="text-align:center">{{Name}}</td>
+        <td style="text-align:center; display: none;">{{Address}}</td>
+        <td style="text-align:center">{{Email}}</td>
+        <td style="text-align:center">{{Phone}}</td>
+        <td style="text-align:center; display: none">{{CMND}}</td>
+        <td style="text-align:center">
+            @*<a class="btn btn-success" style="margin: 5px; color: white" href="/Admin/KhachHang/Edit/id=" + {{ID}}>Chỉnh sửa</a>*@
+            <button class="btn btn-primary btnEdit" data-id="{{ID}}">Edit</button>
+            <button class="btn btn-danger btnDelete" data-id="{{ID}}">Delete</button>
+        </td>
+    </tr>
+</script>
+
+
+@RenderPage("_AddUpdateKhachHangModal.cshtml")
+
+
+
+

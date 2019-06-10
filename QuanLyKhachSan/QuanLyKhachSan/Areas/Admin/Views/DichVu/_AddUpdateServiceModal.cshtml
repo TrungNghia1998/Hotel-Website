@@ -1,0 +1,49 @@
+﻿<!-- Modal Service Boostrap -->
+<div class="modal fade" id="modalAddUpdate" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header btn-primary">
+                <h4 class="modal-title">Dịch vụ</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form role="form" id="frmSaveData">
+                    <div class="form-group">
+                        <label for="txtNameService">Tên dịch vụ:</label>
+                        <input type="text" class="form-control" name="txtNameService" id="txtNameService">
+                        <input type="hidden" id="hiddenID" value="0" />
+                    </div>
+                    <div class="form-group">
+                        <label for="txtPriceService">Giá:</label>
+                        <input type="number" class="form-control" name="txtPriceService" id="txtPriceService">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtQuantityService">Số lượng:</label>
+                        <input type="number" class="form-control" name="txtQuantityService" id="txtQuantityService">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtTypeService">Đơn vị:</label>
+                        <input type="text" class="form-control" name="txtTypeService" id="txtTypeService">
+                    </div>
+                    <div class="form-group">
+                        <label for="fileImage">Hình ảnh:</label>
+                        <input type="file" class="form-control btn-primary" name="fileImage" id="fileImage">
+                    </div>
+                    <div id="imgPreview" class="thumbnail" style="display:none">
+                        <img class="img-responsive" id="targetImage" style="width: 460px" />
+                        <div class="caption" style="text-align: center">
+                            <a href="#" id="clearPreview"><i class="fa fa-trash"></i></a>
+                            <span id="description"></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" id="btnSave">Save</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+

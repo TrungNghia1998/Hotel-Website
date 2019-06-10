@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "Danh sách phòng gọi dịch vụ";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@using DataProvider.Model
+@model List<tblHoaDon>
+
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fa fa-server"></i> Danh sách các phòng gọi dịch vụ
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+
+            <!-- /SSS -->
+            <table class="table table-bordered table-striped table-hover" id="dataTable" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Số phòng</th>
+                        <th>Loại phòng</th>
+                        <th>Tầng</th>
+                        <th>Ngày vào</th>
+                        <th>Tình trạng</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Số phòng</th>
+                        <th>Loại phòng</th>
+                        <th>Tầng</th>
+                        <th>Ngày vào</th>
+                        <th>Tình trạng</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+
+                        <tr>
+                            <td>@item.tblPhieuDatPhong.tblPhong.so_phong</td>
+                            <td>@item.tblPhieuDatPhong.tblPhong.tblLoaiPhong.mo_ta</td>
+                            <td>@item.tblPhieuDatPhong.tblPhong.tblTang.ten_tang</td>
+                            <td>@item.tblPhieuDatPhong.ngay_vao</td>
+                            <td><span class="badge badge-danger badge-g">@item.tblPhieuDatPhong.tblPhong.tblTinhTrangPhong.mo_ta</span></td>
+                            <td><a href="@Url.Action("GoiDichVu","HoaDon",new { id = item.ma_hd})"><button type="button" class="btn btn-primary badge-g">Gọi dịch vụ</button></a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="card-footer small text-muted">Được cập nhật vào lúc @DateTime.Now</div>
+</div>
+
